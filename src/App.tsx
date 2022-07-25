@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home";
+import Information from "./components/pages/Information";
 import "./App.css";
 
 const App: React.FC = () => {
@@ -10,6 +11,7 @@ const App: React.FC = () => {
         <Routes>
           {/* exactをつけると完全一致になります。Homeはexactをつけてあげます */}
           <Route path="/" element={<Home />} />
+          {/* <Route path="/Information/:id" element={<Information />} /> */}
         </Routes>
       </div>
     </BrowserRouter>
