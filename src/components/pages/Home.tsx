@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import Lists from "./../molecules/Lists";
+import Main from "./../templates/Main";
 
 const Home: React.FC = () => {
   const titleObject = [
@@ -13,7 +15,7 @@ const Home: React.FC = () => {
       pass: "test5678",
     },
   ];
-  
+
   useEffect(() => {
     console.log("test");
   }, []);
@@ -22,7 +24,9 @@ const Home: React.FC = () => {
       <header>
         <h1>Home</h1>
       </header>
-      <main></main>
+      <Main>
+        <Lists />
+      </Main>
     </div>
   );
 };
