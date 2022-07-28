@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 
+type propTypes = {
+  isFlag: boolean
+};
 
-const Item: React.FC = (props) => {
+const Item: React.FC<propTypes> = (props) => {
   const [items, setItems] = useState({
     id: "ddd",
     title: "Google",
@@ -23,8 +26,6 @@ const Item: React.FC = (props) => {
   );
 };
 
-Item.propTypes = {
-  isFlag: PropTypes.bool
-};
+
 
 export default Item;

@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import Item from "../molecules/Item";
 import Header from "./../organisms/Header";
 import Main from "./../templates/Main";
-import Button from "./../atoms/Buttun"
+import Button from "./../atoms/Buttun";
 
 const Information: React.FC = () => {
-  const [ifFlag, setIsFlag] = useState<boolean>(false)
+  const [ifFlag, setIsFlag] = useState<boolean>(false);
 
   return (
     <>
@@ -13,10 +13,10 @@ const Information: React.FC = () => {
         <p>templates</p>
       </Header>
       <Main>
-        {/* <Item ifFlag={ifFlag} />
-        <Button ifFlagFunc={setIsFlag} /> */}
-        <Item  />
-        <Button />
+        <Item isFlag={ifFlag} />
+        <Button isFlagFunc={setIsFlag} />
+
+        {/* <Button /> */}
       </Main>
     </>
   );

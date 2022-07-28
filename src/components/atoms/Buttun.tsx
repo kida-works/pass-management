@@ -1,7 +1,11 @@
 import React from "react";
 
-const Button: React.FC = () => {
-  return <button>編集</button>;
+type PropsType = {
+  isFlagFunc: Dispatch<SetStateAction<boolean>>
+} 
+
+const Button: React.FC<PropsType> = (props) => {
+  return <button >編集</button>;
 };
 
 export default Button;
