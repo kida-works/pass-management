@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 type propTypes = {
-  isFlag: boolean
+  isFlag: boolean;
 };
 
-const Item: React.FC<propTypes> = (props) => {
+const Item: React.FC<propTypes> = () => {
   const [items, setItems] = useState({
     id: "ddd",
     title: "Google",
@@ -25,7 +25,5 @@ const Item: React.FC<propTypes> = (props) => {
     </>
   );
 };
-
-
 
 export default Item;

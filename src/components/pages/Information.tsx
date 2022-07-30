@@ -6,6 +6,12 @@ import Button from "./../atoms/Buttun";
 
 const Information: React.FC = () => {
   const [ifFlag, setIsFlag] = useState<boolean>(false);
+  const [items, setItems] = useState({
+    id: "ddd",
+    title: "Google",
+    date: "2022/5/24",
+    pass: "asdfg12345",
+  });
 
   return (
     <>
@@ -13,10 +19,8 @@ const Information: React.FC = () => {
         <p>templates</p>
       </Header>
       <Main>
-        <Item isFlag={ifFlag} />
-        <Button isFlagFunc={setIsFlag} />
-
-        {/* <Button /> */}
+        {ifFlag && <Item />}
+        {<Item isFlag={ifFlag} />}
       </Main>
     </>
   );
