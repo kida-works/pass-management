@@ -1,4 +1,5 @@
 import React, { ReactNode, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 type PropsType = {
@@ -8,6 +9,7 @@ type PropsType = {
 };
 
 const Lists = () => {
+  const navigation = useNavigate();
   const datas = [
     {
       id: "aaa",
@@ -33,11 +35,9 @@ const Lists = () => {
   // useEffect(()=>{
   const passListsElements = datas.map((data) => {
     return (
-      <li key={data.id}>
-        <Link to={`information/${data.title}`}>
-          <p>{data.title}</p>
-          <p>{data.date}</p>
-        </Link>
+      <li key={data.id} onClick={() => navigation(`information/${data.title}`)}>
+        <p>{data.title}</p>
+        <p>{data.date}</p>
       </li>
     );
   });

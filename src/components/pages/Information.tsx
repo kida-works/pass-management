@@ -3,16 +3,17 @@ import Item from "../molecules/Item";
 import Header from "./../organisms/Header";
 import Main from "./../templates/Main";
 import Button from "./../atoms/Buttun";
-import {RouteComponentProps} from 'react-router-dom'
+import RouteComponentProps from "react-router-dom";
 
-type PageProps = {} & RouteComponentProps<{id: string}>;
+type UserProps = {
+  id: string;
+};
 
-type PropsType={
+type PropsType = {
+  id: string;
+};
 
-}
-
-const Information: React.FC<{}> = (props) => {
-  const {id:string} = props.match.params
+const Information: React.FC = () => {
   const [ifFlag, setIsFlag] = useState<boolean>(false);
   const [items, setItems] = useState({
     id: "ddd",
