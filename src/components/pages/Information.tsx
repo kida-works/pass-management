@@ -3,8 +3,16 @@ import Item from "../molecules/Item";
 import Header from "./../organisms/Header";
 import Main from "./../templates/Main";
 import Button from "./../atoms/Buttun";
+import {RouteComponentProps} from 'react-router-dom'
 
-const Information: React.FC = () => {
+type PageProps = {} & RouteComponentProps<{id: string}>;
+
+type PropsType={
+
+}
+
+const Information: React.FC<{}> = (props) => {
+  const {id:string} = props.match.params
   const [ifFlag, setIsFlag] = useState<boolean>(false);
   const [items, setItems] = useState({
     id: "ddd",
@@ -19,7 +27,7 @@ const Information: React.FC = () => {
         <p>templates</p>
       </Header>
       <Main>
-        {ifFlag && <Item />}
+        {/* {ifFlag && <Item />} */}
         {<Item isFlag={ifFlag} />}
       </Main>
     </>

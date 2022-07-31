@@ -1,4 +1,5 @@
 import React, { ReactNode, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 type PropsType = {
   id: string;
@@ -33,8 +34,10 @@ const Lists = () => {
   const passListsElements = datas.map((data) => {
     return (
       <li key={data.id}>
-        <p>{data.title}</p>
-        <p>{data.date}</p>
+        <Link to={`information/${data.title}`}>
+          <p>{data.title}</p>
+          <p>{data.date}</p>
+        </Link>
       </li>
     );
   });

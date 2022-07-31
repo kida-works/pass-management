@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
+
 import Lists from "./../molecules/Lists";
 import Main from "./../templates/Main";
 
 const Home: React.FC = () => {
-  
-
   useEffect(() => {
     console.log("test");
   }, []);

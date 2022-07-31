@@ -12,7 +12,7 @@ const App: React.FC = () => {
           {/* exactをつけると完全一致になります。Homeはexactをつけてあげます */}
           <Route path="/" element={<Home />} />
           {/* <Route path="/Information/:id" element={<Information />} /> */}
-          <Route path="/Information" element={<Information />} />
+          <Route path="/information/:id" element={<Information />} />
         </Routes>
       </div>
     </BrowserRouter>
