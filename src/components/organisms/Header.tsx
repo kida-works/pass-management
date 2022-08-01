@@ -1,15 +1,15 @@
-import React from 'react'
+import React from "react";
 
 interface PropsTypes {
-  children: React.ReactElement;
+  children: React.ReactElement | React.ReactElement[];
 }
 
-const Header:React.FC<PropsTypes> = ({children}) => {
+const Header: React.FC<PropsTypes> = ({ children }) => {
   return (
-  <header>
-    <h1>header</h1>
-    {children}
-  </header>
+    <header>
+      <h1>header</h1>
+      {children}
+    </header>
   );
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 
 interface PropsTypes {
-  children: React.ReactElement[] | React.ReactElement;
+  children: React.ReactElement | React.ReactElement[];
 }
 
 const Main: React.FC<PropsTypes> = ({ children }) => {
