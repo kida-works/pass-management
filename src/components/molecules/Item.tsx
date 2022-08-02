@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
 
-type propTypes = {
+type PropTypes = {
   isFlag: boolean;
 };
 type ParamsType = {
   id: string;
 };
 
-const Item: React.FC<propTypes> = () => {
+const Item: React.FC<PropTypes> = (props) => {
   const params = useParams<ParamsType>();
   const [items, setItems] = useState({
     id: "ddd",
@@ -22,8 +22,20 @@ const Item: React.FC<propTypes> = () => {
   return (
     <>
       {/* <p>パラメータ：{params}</p> */}
-      {!items && <p>情報がありません</p>}
-      {items && (
+      {!props.isFlag && (
+        <form>
+          <div>
+            <label htmlFor="name">name:</label>
+            <input name="name" type="text" />
+          </div>
+          <div>
+            <label htmlFor="pass">password:</label>
+            <input id="pass" type="text" />
+          </div>
+          <button>保存</button>
+        </form>
+      )}
+      {props.isFlag && (
         <ul>
           <li>{items.title}</li>
           <li>{items.pass}</li>

@@ -27,12 +27,12 @@ const Information: React.FC = () => {
   return (
     <>
       <Header>
-        <button onClick={()=>navigation(-1)}>戻る</button>
+        <button onClick={() => navigation(-1)}>戻る</button>
         <p>templates</p>
       </Header>
       <Main>
-        {/* {ifFlag && <Item />} */}
         {<Item isFlag={ifFlag} />}
+        <Button text="編集" isFlagFunc={setIsFlag} argument={!ifFlag} />
       </Main>
     </>
   );

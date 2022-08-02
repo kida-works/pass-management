@@ -1,11 +1,14 @@
 import React from "react";
 
-// type PropsType = {
-//   isFlagFunc: Dispatch<SetStateAction<boolean>>
-// }
+type MyFunctionType = (value: boolean) => void;
+interface PropsType  {
+  isFlagFunc: MyFunctionType | React.Dispatch<React.SetStateAction<boolean>>
+  text: string
+  argument: boolean
+}
 
-const Button: React.FC = (props) => {
-  return <button>編集</button>;
+const Button: React.FC<PropsType> = (props) => {
+  return <button onClick={()=>props.isFlagFunc(props.argument)}>{props.text}</button>;
 };
 
 export default Button;
