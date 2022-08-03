@@ -1,6 +1,6 @@
 import React from "react";
 
-type MyFunctionType = (value: boolean) => void;
+type MyFunctionType = (value: boolean | string) => void;
 interface PropsType  {
   isFlagFunc: MyFunctionType | React.Dispatch<React.SetStateAction<boolean>>
   text: string
