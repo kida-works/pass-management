@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../atoms/Buttun";
-import Lists from "../molecules/Lists";
+import NewForm from "../molecules/NewForm";
 import Main from "../templates/Main";
 
 const Create: React.FC = () => {
-  const navigation = useNavigate()
+  const navigation = useNavigate();
   return (
     <>
       <header>
@@ -13,7 +13,7 @@ const Create: React.FC = () => {
         <button onClick={() => navigation(-1)}>戻る</button>
       </header>
       <Main>
-        <Lists />
+        <NewForm />
       </Main>
     </>
   );
