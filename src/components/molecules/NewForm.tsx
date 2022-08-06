@@ -1,4 +1,5 @@
 import React from "react";
+import { passCreate } from "../functions/passFunc";
 
 const NewForm: React.FC = () => {
   const item = () => {
@@ -19,7 +20,7 @@ const NewForm: React.FC = () => {
   return (
     <form action="">
       {item()}
-      <button>保存</button>
+      <div onClick={() => passCreate()}>保存</div>
     </form>
   );
 };
