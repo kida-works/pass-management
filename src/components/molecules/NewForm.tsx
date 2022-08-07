@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { passCreate } from "../functions/passFunc";
 
 const NewForm: React.FC = () => {
   const item = () => {
+    const [pass, setPass] = useState("");
     return (
       <div>
         <h2>NewForm</h2>
@@ -12,7 +13,10 @@ const NewForm: React.FC = () => {
         </div>
         <div>
           <label htmlFor="pass">password:</label>
-          <input id="pass" type="text" />
+          <input id="pass" type="text" value={pass} />
+          <button type="button" onClick={() => setPass(passCreate(15))}>
+            パスワード作成
+          </button>
         </div>
       </div>
     );
@@ -20,7 +24,7 @@ const NewForm: React.FC = () => {
   return (
     <form action="">
       {item()}
-      <div onClick={() => passCreate()}>保存</div>
+      <button type="button">保存</button>
     </form>
   );
 };
