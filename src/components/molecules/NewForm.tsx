@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import { passCreate } from "../functions/passFunc";
 
 const NewForm: React.FC = () => {
+  const [pass, setPass] = useState("");
   const item = () => {
-    const [pass, setPass] = useState("");
     return (
       <div>
         <h2>NewForm</h2>
+        <div>
+          <label htmlFor="title">Title:</label>
+          <input name="title" type="text" />
+        </div>
         <div>
           <label htmlFor="name">name:</label>
           <input name="name" type="text" />
