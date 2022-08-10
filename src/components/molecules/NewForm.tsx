@@ -3,17 +3,29 @@ import { passCreate } from "../functions/passFunc";
 
 const NewForm: React.FC = () => {
   const [pass, setPass] = useState("");
+  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
   const item = () => {
     return (
       <div>
         <h2>NewForm</h2>
         <div>
           <label htmlFor="title">Title:</label>
-          <input name="title" type="text" />
+          <input
+            name="title"
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
         </div>
         <div>
           <label htmlFor="name">name:</label>
-          <input name="name" type="text" />
+          <input
+            name="name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
         <div>
           <label htmlFor="pass">password:</label>
