@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { passCreate } from "../functions/passFunc";
+import { dataKeep } from "../functions/dataKeepFunc";
 
 const NewForm: React.FC = () => {
   const [pass, setPass] = useState("");
@@ -29,7 +30,12 @@ const NewForm: React.FC = () => {
         </div>
         <div>
           <label htmlFor="pass">password:</label>
-          <input id="pass" type="text" value={pass} />
+          <input
+            id="pass"
+            type="text"
+            value={pass}
+            onChange={(e) => setPass(e.target.value)}
+          />
           <button type="button" onClick={() => setPass(passCreate(15))}>
             パスワード作成
           </button>
@@ -40,7 +46,9 @@ const NewForm: React.FC = () => {
   return (
     <form action="">
       {item()}
-      <button type="button">保存</button>
+      <button type="button" onClick={() => dataKeep(title, name, pass)}>
+        保存
+      </button>
     </form>
   );
 };
