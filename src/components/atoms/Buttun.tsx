@@ -24,7 +24,7 @@ const StyledButton = styled.button`
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5);
   background: #2196f3;
   position: fixed;
-  top: 20px;
+  bottom: 20px;
   right: 20px;
 `;
 

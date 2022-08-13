@@ -1,6 +1,7 @@
 import React, { ReactNode, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 type PropsType = {
   id: string;
@@ -35,10 +36,13 @@ const Lists = () => {
   // useEffect(()=>{
   const passListsElements = datas.map((data) => {
     return (
-      <li key={data.id} onClick={() => navigation(`information/${data.title}`)}>
-        <p>{data.title}</p>
-        <p>{data.date}</p>
-      </li>
+      <StyledList
+        key={data.id}
+        onClick={() => navigation(`information/${data.title}`)}
+      >
+        <p className="date">{data.date}</p>
+        <p className="title">{data.title}</p>
+      </StyledList>
     );
   });
   // },[])
@@ -50,5 +54,16 @@ const Lists = () => {
     </div>
   );
 };
+
+const StyledList = styled.li`
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #000;
+  padding: 12px 0;
+  cursor: pointer;
+  .date {
+    padding: 0 8% 0 0;
+  }
+`;
 
 export default Lists;
