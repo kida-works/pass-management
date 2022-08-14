@@ -47,9 +47,9 @@ const NewForm: React.FC = () => {
   return (
     <form action="">
       {item()}
-      <button type="button" onClick={() => dataKeep(title, name, pass)}>
+      <StyledButton type="button" onClick={() => dataKeep(title, name, pass)}>
         保存
-      </button>
+      </StyledButton>
     </form>
   );
 };
@@ -62,10 +62,26 @@ const StyledDiv = styled.div`
     label {
       display: inline-block;
       width: 80px;
+      color: #424242;
     }
     input {
       border-bottom: 1px solid #000;
     }
   }
+  button {
+    border: 1px solid #000;
+  }
+`;
+
+const StyledButton = styled.button`
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
+  background: #2196f3;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 `;
 export default NewForm;
