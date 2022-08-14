@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import { passCreate } from "../functions/passFunc";
 import { dataKeep } from "../functions/dataKeepFunc";
 
@@ -8,9 +9,9 @@ const NewForm: React.FC = () => {
   const [title, setTitle] = useState("");
   const item = () => {
     return (
-      <div>
+      <StyledDiv>
         <h2>NewForm</h2>
-        <div>
+        <div className="item">
           <label htmlFor="title">Title:</label>
           <input
             name="title"
@@ -19,7 +20,7 @@ const NewForm: React.FC = () => {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div>
+        <div className="item">
           <label htmlFor="name">name:</label>
           <input
             name="name"
@@ -28,7 +29,7 @@ const NewForm: React.FC = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div>
+        <div className="item">
           <label htmlFor="pass">password:</label>
           <input
             id="pass"
@@ -40,7 +41,7 @@ const NewForm: React.FC = () => {
             パスワード作成
           </button>
         </div>
-      </div>
+      </StyledDiv>
     );
   };
   return (
@@ -52,4 +53,19 @@ const NewForm: React.FC = () => {
     </form>
   );
 };
+
+const StyledDiv = styled.div`
+  width: 60%;
+  margin: 0 auto;
+  .item {
+    padding: 0 0 16px 0;
+    label {
+      display: inline-block;
+      width: 80px;
+    }
+    input {
+      border-bottom: 1px solid #000;
+    }
+  }
+`;
 export default NewForm;
