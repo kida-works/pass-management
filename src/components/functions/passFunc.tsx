@@ -34,9 +34,11 @@ export const passCreate = (digitsNum: number) => {
       setNumber.push(topIndex);
       pass = pass + passItem[topIndex][btmIndex];
     }
+    console.log(setNumber);
     isFlag = checkValueFunc(checkNumber, setNumber);
     if (!isFlag) {
       pass = "";
+      setNumber = [];
     }
   }
 
