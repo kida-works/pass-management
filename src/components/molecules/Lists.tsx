@@ -58,11 +58,24 @@ const Lists = () => {
 const StyledList = styled.li`
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid #000;
-  padding: 12px 0;
+  border-bottom: 1px solid #424242;
+  padding: 16px 0;
   cursor: pointer;
+  position: relative;
   .date {
-    padding: 0 8% 0 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 16px;
+    display: flex;
+    align-items: center;
+    color: #757575;
+  }
+  .title {
+    width: 50%;
+    text-align: center;
+    font-size: 20px;
+    color: #212121;
   }
 `;
 
