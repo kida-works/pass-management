@@ -17,7 +17,7 @@ type PropsType = {
 };
 
 const Information: React.FC = () => {
-  const [ifFlag, setIsFlag] = useState<boolean>(false);
+  const [ifFlag, setIsFlag] = useState<boolean>(true);
   const [items, setItems] = useState({
     id: "ddd",
     title: "Google",

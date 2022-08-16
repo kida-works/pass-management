@@ -14,6 +14,7 @@ const Item: React.FC<PropTypes> = (props) => {
   const [items, setItems] = useState({
     id: "ddd",
     title: "Google",
+    name: "test",
     date: "2022/5/24",
     pass: "asdfg12345",
   });
@@ -26,19 +27,30 @@ const Item: React.FC<PropTypes> = (props) => {
       {!props.isFlag && (
         <StyledForm>
           <div className="item">
+            <label htmlFor="title">Title:</label>
+            <input
+              name="title"
+              type="text"
+              value={items.title}
+              // onChange={}
+            />
+          </div>
+          <div className="item">
             <label htmlFor="name">name:</label>
-            <input name="name" type="text" />
+            <input name="name" type="text" value={items.name} />
           </div>
           <div className="item">
             <label htmlFor="pass">password:</label>
-            <input id="pass" type="text" />
+            <input id="pass" type="text" value={items.pass} />
           </div>
           <button type="button">保存</button>
         </StyledForm>
       )}
       {props.isFlag && (
         <ul>
+          <li>{items.date}</li>
           <li>{items.title}</li>
+          <li>{items.name}</li>
           <li>{items.pass}</li>
         </ul>
       )}

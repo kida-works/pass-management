@@ -11,10 +11,10 @@ const Create: React.FC = () => {
     <>
       <header>
         <h1>Create</h1>
-        <button onClick={() => navigation(-1)}>戻る</button>
       </header>
       <Main>
         <NewForm />
+        <ReturnBtn />
       </Main>
     </>
   );
