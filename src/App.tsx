@@ -4,7 +4,7 @@ import Home from "./components/pages/Home";
 import Information from "./components/pages/Information";
 import Create from "./components/pages/CreatePage";
 import "ress";
-// import "./App.css";
+import "./App.css";
 
 const App: React.FC = () => {
   return (
