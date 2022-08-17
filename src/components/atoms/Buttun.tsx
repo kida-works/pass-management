@@ -10,7 +10,10 @@ interface PropsType {
 
 const Button: React.FC<PropsType> = (props) => {
   return (
-    <StyledButton onClick={() => props.isFlagFunc(props.argument)}>
+    <StyledButton
+      type="button"
+      onClick={() => props.isFlagFunc(props.argument)}
+    >
       {props.text}
     </StyledButton>
   );

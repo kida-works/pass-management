@@ -3,7 +3,6 @@ import Item from "../molecules/Item";
 import Header from "./../organisms/Header";
 import Main from "./../templates/Main";
 import Button from "./../atoms/Buttun";
-import ReturnBtn from "./../atoms/ReturnBtn";
 import styled from "styled-components";
 // import {RouteComponentProps, useNavigate} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -18,12 +17,20 @@ type PropsType = {
 
 const Information: React.FC = () => {
   const [ifFlag, setIsFlag] = useState<boolean>(true);
+  const [text, setText] = useState<string>("編集");
   const [items, setItems] = useState({
     id: "ddd",
     title: "Google",
     date: "2022/5/24",
     pass: "asdfg12345",
   });
+  useEffect(() => {
+    if (ifFlag) {
+      setText("編集");
+    } else {
+      setText("戻る");
+    }
+  }, [ifFlag]);
 
   return (
     <>
@@ -32,12 +39,10 @@ const Information: React.FC = () => {
       </Header>
       <Main>
         {<Item isFlag={ifFlag} />}
-        <Button text="編集" isFlagFunc={setIsFlag} argument={!ifFlag} />
-        <ReturnBtn />
+        <Button text={text} isFlagFunc={setIsFlag} argument={!ifFlag} />
       </Main>
     </>
   );
 };
-
 
 export default Information;
