@@ -25,7 +25,6 @@ const Item: React.FC<PropTypes> = (props) => {
   }, []);
   return (
     <>
-      {/* <p>パラメータ：{params}</p> */}
       {!props.isFlag && (
         <StyledForm>
           <div className="item">
@@ -85,15 +84,27 @@ const Item: React.FC<PropTypes> = (props) => {
         </StyledForm>
       )}
       {props.isFlag && (
-        <div>
+        <StyledDiv>
           <ul>
-            <li>{items.date}</li>
-            <li>{items.title}</li>
-            <li>{items.name}</li>
-            <li>{items.pass}</li>
+            <li className="item">
+              <span>date:</span>
+              {items.date}
+            </li>
+            <li className="item">
+              <span>title:</span>
+              {items.title}
+            </li>
+            <li className="item">
+              <span>name:</span>
+              {items.name}
+            </li>
+            <li className="item">
+              <span>pass:</span>
+              {items.pass}
+            </li>
           </ul>
           <ReturnBtn />
-        </div>
+        </StyledDiv>
       )}
     </>
   );
@@ -117,6 +128,20 @@ const StyledForm = styled.form`
   button {
     border: 1px solid #000;
     padding: 8px 16px;
+  }
+`;
+
+const StyledDiv = styled.div`
+  width: 75%;
+  margin: 0 auto;
+  .item {
+    padding: 0 0 16px 0;
+    font-size: 18px;
+    span {
+      font-size: 16px;
+      color: #424242;
+      margin: 0 8px 0 0;
+    }
   }
 `;
 
