@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReturnBtn from "./../atoms/ReturnBtn";
+import { passCreate } from "../functions/passFunc";
 import { useParams, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
@@ -68,6 +69,17 @@ const Item: React.FC<PropTypes> = (props) => {
                 }))
               }
             />
+            <button
+              type="button"
+              onClick={(e) =>
+                setItems((prevState) => ({
+                  ...prevState,
+                  pass: passCreate(15),
+                }))
+              }
+            >
+              パスワード作成
+            </button>
           </div>
           <button type="button">保存</button>
         </StyledForm>
