@@ -6,29 +6,23 @@ import styled from "styled-components";
 
 type PropTypes = {
   isFlag: boolean;
+  items: itemsType[];
 };
 type ParamsType = {
   id: string;
 };
 
+type itemsType = {
+  id: string | number;
+  title: string;
+  name: string;
+  date: string;
+  pass: string;
+};
+
 const Item: React.FC<PropTypes> = (props) => {
   const params = useParams<ParamsType>();
-  const [items, setItems] = useState([
-    {
-      id: "ddd",
-      title: "Google",
-      name: "test",
-      date: "2022/5/24",
-      pass: "asdfg12345",
-    },
-    {
-      id: "ddd",
-      title: "Google",
-      name: "test",
-      date: "2022/5/24",
-      pass: "asdfg12345",
-    },
-  ]);
+  const [items, setItems] = useState(props.items);
   const itemList = items.map((item) => {
     return (
       <div>
@@ -89,7 +83,6 @@ const Item: React.FC<PropTypes> = (props) => {
     );
   });
 
-  
   useEffect(() => {
     console.log(params.id);
   }, []);

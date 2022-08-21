@@ -18,12 +18,22 @@ type PropsType = {
 const Information: React.FC = () => {
   const [ifFlag, setIsFlag] = useState<boolean>(true);
   const [text, setText] = useState<string>("編集");
-  const [items, setItems] = useState({
-    id: "ddd",
-    title: "Google",
-    date: "2022/5/24",
-    pass: "asdfg12345",
-  });
+  const [items, setItems] = useState([
+    {
+      id: "ddd",
+      title: "Google",
+      name: "test",
+      date: "2022/5/24",
+      pass: "asdfg12345",
+    },
+    {
+      id: "ddd",
+      title: "Google",
+      name: "test",
+      date: "2022/5/24",
+      pass: "asdfg12345",
+    },
+  ]);
   useEffect(() => {
     if (ifFlag) {
       setText("編集");
@@ -38,7 +48,7 @@ const Information: React.FC = () => {
         <p>templates</p>
       </Header>
       <Main>
-        {<Item isFlag={ifFlag} />}
+        {<Item isFlag={ifFlag} items={items} />}
         <Button text={text} isFlagFunc={setIsFlag} argument={!ifFlag} />
       </Main>
     </>
