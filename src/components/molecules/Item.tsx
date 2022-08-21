@@ -13,13 +13,83 @@ type ParamsType = {
 
 const Item: React.FC<PropTypes> = (props) => {
   const params = useParams<ParamsType>();
-  const [items, setItems] = useState({
-    id: "ddd",
-    title: "Google",
-    name: "test",
-    date: "2022/5/24",
-    pass: "asdfg12345",
+  const [items, setItems] = useState([
+    {
+      id: "ddd",
+      title: "Google",
+      name: "test",
+      date: "2022/5/24",
+      pass: "asdfg12345",
+    },
+    {
+      id: "ddd",
+      title: "Google",
+      name: "test",
+      date: "2022/5/24",
+      pass: "asdfg12345",
+    },
+  ]);
+  const itemList = items.map((item) => {
+    return (
+      <div>
+        <div className="item">
+          <label htmlFor="title">Title:</label>
+          <input
+            name="title"
+            type="text"
+            value={item.title}
+            onChange={(e) =>
+              setItems((prevState) => ({
+                ...prevState,
+                title: e.target.value,
+              }))
+            }
+          />
+        </div>
+        <div className="item">
+          <label htmlFor="name">name:</label>
+          <input
+            name="name"
+            type="text"
+            value={item.name}
+            onChange={(e) =>
+              setItems((prevState) => ({
+                ...prevState,
+                name: e.target.value,
+              }))
+            }
+          />
+        </div>
+        <div className="item">
+          <label htmlFor="pass">password:</label>
+          <input
+            id="pass"
+            type="text"
+            value={item.pass}
+            onChange={(e) =>
+              setItems((prevState) => ({
+                ...prevState,
+                pass: e.target.value,
+              }))
+            }
+          />
+          <button
+            type="button"
+            onClick={(e) =>
+              setItems((prevState) => ({
+                ...prevState,
+                pass: passCreate(15),
+              }))
+            }
+          >
+            パスワード作成
+          </button>
+        </div>
+      </div>
+    );
   });
+
+  
   useEffect(() => {
     console.log(params.id);
   }, []);
@@ -27,65 +97,13 @@ const Item: React.FC<PropTypes> = (props) => {
     <>
       {!props.isFlag && (
         <StyledForm>
-          <div className="item">
-            <label htmlFor="title">Title:</label>
-            <input
-              name="title"
-              type="text"
-              value={items.title}
-              onChange={(e) =>
-                setItems((prevState) => ({
-                  ...prevState,
-                  title: e.target.value,
-                }))
-              }
-            />
-          </div>
-          <div className="item">
-            <label htmlFor="name">name:</label>
-            <input
-              name="name"
-              type="text"
-              value={items.name}
-              onChange={(e) =>
-                setItems((prevState) => ({
-                  ...prevState,
-                  name: e.target.value,
-                }))
-              }
-            />
-          </div>
-          <div className="item">
-            <label htmlFor="pass">password:</label>
-            <input
-              id="pass"
-              type="text"
-              value={items.pass}
-              onChange={(e) =>
-                setItems((prevState) => ({
-                  ...prevState,
-                  pass: e.target.value,
-                }))
-              }
-            />
-            <button
-              type="button"
-              onClick={(e) =>
-                setItems((prevState) => ({
-                  ...prevState,
-                  pass: passCreate(15),
-                }))
-              }
-            >
-              パスワード作成
-            </button>
-          </div>
+          {itemList}
           <button type="button">保存</button>
         </StyledForm>
       )}
       {props.isFlag && (
         <StyledDiv>
-          <ul>
+          {/* <ul>
             <li className="item">
               <span>date:</span>
               {items.date}
@@ -102,7 +120,7 @@ const Item: React.FC<PropTypes> = (props) => {
               <span>pass:</span>
               {items.pass}
             </li>
-          </ul>
+          </ul> */}
           <ReturnBtn />
         </StyledDiv>
       )}
