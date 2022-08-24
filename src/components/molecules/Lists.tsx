@@ -33,7 +33,7 @@ const Lists = () => {
       date: "2022/5/24",
     },
   ];
-  // useEffect(()=>{
+
   const passListsElements = datas.map((data) => {
     return (
       <StyledList
@@ -45,7 +45,6 @@ const Lists = () => {
       </StyledList>
     );
   });
-  // },[])
 
   return (
     <div>
