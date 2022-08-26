@@ -1,8 +1,8 @@
-interface dataTyps {
-  title: string;
-  name: string;
-  pass: string;
-}
+// interface dataTyps {
+//   title: string;
+//   name: string;
+//   pass: string;
+// }
 
 export const dataKeep = (title: string, name: string, pass: string) => {
   console.log(title);
@@ -13,5 +13,8 @@ export const dataKeep = (title: string, name: string, pass: string) => {
   }
   if (!name) {
     alert("nameを設定してください");
+  }
+  if (!pass) {
+    alert("パスワードを設定してください");
   }
 };

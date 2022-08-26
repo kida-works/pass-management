@@ -3,7 +3,7 @@ import Item from "../molecules/Item";
 import Header from "./../organisms/Header";
 import Main from "./../templates/Main";
 import Button from "./../atoms/Buttun";
-import styled from "styled-components";
+// import styled from "styled-components";
 // import {RouteComponentProps, useNavigate} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
