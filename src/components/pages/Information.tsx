@@ -7,14 +7,6 @@ import Button from "./../atoms/Buttun";
 // import {RouteComponentProps, useNavigate} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-// type UserProps = {
-//   id: string;
-// };
-
-// type PropsType = {
-//   id: string;
-// };
-
 const Information: React.FC = () => {
   const [ifFlag, setIsFlag] = useState<boolean>(true);
   const [text, setText] = useState<string>("編集");
