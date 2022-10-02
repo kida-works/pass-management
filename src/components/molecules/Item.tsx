@@ -67,18 +67,19 @@ const Item: React.FC<PropTypes> = (props) => {
               }))
             }
           />
-          <button
-            type="button"
-            onClick={(e) =>
-              setItems((prevState) => ({
-                ...prevState,
-                pass: passCreate(15),
-              }))
-            }
-          >
-            パスワード作成
-          </button>
         </div>
+        
+        <button
+          type="button"
+          onClick={(e) =>
+            setItems((prevState) => ({
+              ...prevState,
+              pass: passCreate(15),
+            }))
+          }
+        >
+          パスワード作成
+        </button>
       </div>
     );
   });
