@@ -23,7 +23,8 @@ type itemsType = {
 const Item: React.FC<PropTypes> = (props) => {
   const params = useParams<ParamsType>();
   const [items, setItems] = useState(props.items);
-  const itemList = items.map((item) => {
+
+  const itemListEdit = items.map((item) => {
     return (
       <div>
         <div className="item">
@@ -67,54 +68,56 @@ const Item: React.FC<PropTypes> = (props) => {
               }))
             }
           />
+          <button
+            type="button"
+            onClick={(e) =>
+              setItems((prevState) => ({
+                ...prevState,
+                pass: passCreate(15),
+              }))
+            }
+          >
+            パスワード作成
+          </button>
         </div>
-        
-        <button
-          type="button"
-          onClick={(e) =>
-            setItems((prevState) => ({
-              ...prevState,
-              pass: passCreate(15),
-            }))
-          }
-        >
-          パスワード作成
-        </button>
+      </div>
+    );
+  });
+
+  const itemList = items.map((item) => {
+    return (
+      <div>
+        <div className="item">
+          <label htmlFor="title">Title</label>
+          <p>{item.title}</p>
+        </div>
+        <div className="item">
+          <label htmlFor="name">name</label>
+
+          <p>{item.name}</p>
+        </div>
+        <div className="item">
+          <label htmlFor="pass">password</label>
+          <p>{item.pass}</p>
+        </div>
       </div>
     );
   });
 
   useEffect(() => {
-    console.log(params.id);
+    // console.log(params.id);
   }, []);
   return (
     <>
       {!props.isFlag && (
         <StyledForm>
-          {itemList}
+          {itemListEdit}
           <button type="button">保存</button>
         </StyledForm>
       )}
       {props.isFlag && (
         <StyledDiv>
-          {/* <ul>
-            <li className="item">
-              <span>date:</span>
-              {items.date}
-            </li>
-            <li className="item">
-              <span>title:</span>
-              {items.title}
-            </li>
-            <li className="item">
-              <span>name:</span>
-              {items.name}
-            </li>
-            <li className="item">
-              <span>pass:</span>
-              {items.pass}
-            </li>
-          </ul> */}
+          {itemList}
           <ReturnBtn />
         </StyledDiv>
       )}

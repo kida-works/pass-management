@@ -12,7 +12,7 @@ const NewForm: React.FC = () => {
       <StyledDiv>
         <h2>NewForm</h2>
         <div className="item">
-          <label htmlFor="title">Title:</label>
+          <label htmlFor="title">Title: </label>
           <input
             name="title"
             type="text"
@@ -21,7 +21,7 @@ const NewForm: React.FC = () => {
           />
         </div>
         <div className="item">
-          <label htmlFor="name">name:</label>
+          <label htmlFor="name">name: </label>
           <input
             name="name"
             type="text"
@@ -30,17 +30,17 @@ const NewForm: React.FC = () => {
           />
         </div>
         <div className="item">
-          <label htmlFor="pass">password:</label>
+          <label htmlFor="pass">password: </label>
           <input
             id="pass"
             type="text"
             value={pass}
             onChange={(e) => setPass(e.target.value)}
           />
-          <button type="button" onClick={() => setPass(passCreate(15))}>
-            パスワード作成
-          </button>
         </div>
+        <button type="button" onClick={() => setPass(passCreate(15))}>
+          パスワード作成
+        </button>
       </StyledDiv>
     );
   };
@@ -70,6 +70,7 @@ const StyledDiv = styled.div`
   }
   button {
     border: 1px solid #000;
+    display: block;
   }
 `;
 
