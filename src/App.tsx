@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home";
 import Information from "./components/pages/Information";
 import Create from "./components/pages/CreatePage";
+// import firebase from "firebase";
 import "ress";
 import "./App.css";
 
